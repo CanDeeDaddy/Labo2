@@ -25,13 +25,13 @@ public class CollectionJoueurs implements Collection {
     {
 
         if ( capacite == 0 &&numberOfItems >= DEFAULT_MAX_ITEMS) {
-            System.out.println("Luste de joueurs est rempli");
+            System.out.println("Liste de joueurs est rempli");
             return false;
         }
         else
         {
             if(numberOfItems >= capacite){
-                System.out.println("Luste de joueurs est rempli");
+                System.out.println("Liste de joueurs est rempli");
 
                 return false;
             }

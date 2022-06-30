@@ -1,3 +1,4 @@
+import Framework.Bunco;
 import Framework.CollectionJoueurs;
 import Framework.JoueurTest;
 
@@ -9,7 +10,7 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        boolean continue = true;
+        boolean keepGoing = true;
         do{
         System.out.println("Welcome to Bunco");
         System.out.println("---------------------------------------");
@@ -26,6 +27,21 @@ public class Main {
 
         switch(vesrion){
             case "1":
+                System.out.println("How many players? (2-12)");
+                String nbJoueur = reader.readLine();
+                try {
+                    int value = Integer.parseInt(nbJoueur);
+                    if( value < 2 || value > 12){
+                        throw new Exception("Exception message");
+                    }
+
+                    Bunco b = new Bunco(value);
+
+                } catch (NumberFormatException e) {
+                    System.out.println("not a valid number.");
+                } catch (Exception e) {
+                    System.out.println("not a valid number.");
+                }
                 break;
             case "2":
 
@@ -37,7 +53,7 @@ public class Main {
         }
 
         System.out.println(vesrion);
-        }while(continue);
+        }while(keepGoing);
 
     }
 
