@@ -4,9 +4,13 @@ public class Joueur implements Comparable<Joueur> {
     private int id;
     private String nom;
     private  int score;
+    private  CollectionDes collectionDes;
 
-    Joueur(String nom){
+
+
+    Joueur(String nom , CollectionDes collectionDes){
         this.nom = nom;
+        this.collectionDes = collectionDes;
     }
 
     public int getId() {
@@ -20,6 +24,10 @@ public class Joueur implements Comparable<Joueur> {
     public int getScore() {
         return score;
     }
+    
+    public CollectionDes getCollectionDes() {
+        return collectionDes;
+    }
 
     @Override
     public int compareTo(Joueur o) {
@@ -30,4 +38,6 @@ public class Joueur implements Comparable<Joueur> {
         else
             return -1;
     }
+
+
 }
