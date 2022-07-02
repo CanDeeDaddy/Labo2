@@ -5,7 +5,7 @@ public class CollectionDes implements Collection
     private int size;
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
-    De[] desList;
+    public De[] desList;
 
 
     public CollectionDes()

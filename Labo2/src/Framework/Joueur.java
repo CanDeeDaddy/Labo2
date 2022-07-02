@@ -4,13 +4,14 @@ public class Joueur implements Comparable<Joueur> {
     private int id;
     private String nom;
     private  int score;
+
+    int curentScore = 0;
     private  CollectionDes collectionDes;
 
 
 
-    Joueur(String nom , CollectionDes collectionDes){
+    public Joueur(String nom ){
         this.nom = nom;
-        this.collectionDes = collectionDes;
     }
 
     public int getId() {
@@ -23,6 +24,10 @@ public class Joueur implements Comparable<Joueur> {
 
     public int getScore() {
         return score;
+    }
+
+    public void setScore(int points){
+        score += points;
     }
     
     public CollectionDes getCollectionDes() {
@@ -38,6 +43,17 @@ public class Joueur implements Comparable<Joueur> {
         else
             return -1;
     }
+
+    public void ajouterDe(){
+        collectionDes = new CollectionDes();
+        for(int i=0; i < 3; i++ ){
+            De D  = new De();
+            collectionDes.ajouterDe(D);
+        }
+
+    }
+
+
 
 
 }

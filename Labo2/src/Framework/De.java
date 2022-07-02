@@ -7,6 +7,8 @@ public class De implements Comparable <De>{
     private static final int MAX = 6;
     private static final int MIN = 1;
 
+    public int value = 0;
+
     De(){
 
     }
@@ -18,6 +20,9 @@ public class De implements Comparable <De>{
     @Override
     public int compareTo(De o) {
         //Je sais pas encore quoi je dois comparer
-        return 0;
+        if (o.value == value){
+            return 1;
+        }else {return 0;}
+
     }
 }

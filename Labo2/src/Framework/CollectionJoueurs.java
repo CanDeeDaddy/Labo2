@@ -8,7 +8,7 @@ public class CollectionJoueurs implements Collection {
     private int capacite = 0;
     static final int DEFAULT_MAX_ITEMS = 6;
     int numberOfItems = 0;
-    Joueur[] joueursList;
+    public Joueur[] joueursList;
 
 
     public CollectionJoueurs()
