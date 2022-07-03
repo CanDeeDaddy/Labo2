@@ -1,6 +1,9 @@
 package Framework;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class CollectionJoueurs implements Collection {
 
@@ -54,6 +57,18 @@ public class CollectionJoueurs implements Collection {
         }
         return false;
     }
+
+    /**
+     * Cette methode retourne la liste de joueur en ordre decroissant
+     * @return une liste de joueur
+     */
+    public List<Joueur> toArray(){
+         List<Joueur> list = Arrays.asList(joueursList);
+         Collections.sort(list);
+        return list;
+    }
+
+
 
 
     @Override

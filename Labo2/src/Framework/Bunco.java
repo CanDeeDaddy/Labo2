@@ -33,7 +33,7 @@ public class Bunco extends Jeu {
             boolean nextRound = false;
             do{
                 for (int k = 0; k < nombreDeJoeur; k++) {
-                    System.out.println("Joeur : " + colJ.joueursList[k].getNom());
+                    System.out.println("Joueur : " + colJ.joueursList[k].getNom());
                     System.out.println();
                     boolean keepRolling = true;
 

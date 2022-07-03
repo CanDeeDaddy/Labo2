@@ -34,14 +34,19 @@ public class Joueur implements Comparable<Joueur> {
         return collectionDes;
     }
 
+    /** **
+     *  compare les differents joueurs en ordre decroissant
+     * @param o
+     * @return
+     */
     @Override
     public int compareTo(Joueur o) {
         if(score==o.score)
             return 0;
         else if(score>o.score)
-            return 1;
-        else
             return -1;
+        else
+            return 1;
     }
 
     public void ajouterDe(){
@@ -53,7 +58,13 @@ public class Joueur implements Comparable<Joueur> {
 
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", score=" + score +
+                ", curentScore=" + curentScore +
+                '}';
+    }
 }
