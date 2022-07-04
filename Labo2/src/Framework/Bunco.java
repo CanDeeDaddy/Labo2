@@ -29,6 +29,8 @@ public class Bunco extends Jeu {
         for(int i=0; i < 6; i++ ) {
             int tour = i + 1;
             System.out.println("Tour " + tour);
+            colJ.afficherScoreJoueurs();
+            System.out.println("Appuyer sur la touche entree pour lancer les dees");
             String next = reader.readLine();
             boolean nextRound = false;
             do{
@@ -44,9 +46,11 @@ public class Bunco extends Jeu {
                         for (int j = 0; j < 3; j++) {
 
                             colJ.joueursList[k].getCollectionDes().desList[j].value = colJ.joueursList[k].getCollectionDes().desList[j].lancerDe();
-                            System.out.print(colJ.joueursList[k].getCollectionDes().desList[j].value + " ");
+                           // System.out.print(colJ.joueursList[k].getCollectionDes().desList[j].value + " ");
 
                         }
+
+                        colJ.joueursList[k].getCollectionDes().afficherDes();
 
                         compare += colJ.joueursList[k].getCollectionDes().desList[0].compareTo(colJ.joueursList[k].getCollectionDes().desList[1]);
                         compare += colJ.joueursList[k].getCollectionDes().desList[0].compareTo(colJ.joueursList[k].getCollectionDes().desList[2]);
@@ -110,6 +114,7 @@ public class Bunco extends Jeu {
                         }
 
                         System.out.println();
+                        System.out.println("Appuyer sur la touche entree pour lancer les dees");
                         next = reader.readLine();
 
 
@@ -117,6 +122,8 @@ public class Bunco extends Jeu {
 
                     System.out.println("point : " + colJ.joueursList[k].getScore());
                     System.out.println();
+                    colJ.afficherScoreJoueurs();
+
 
                     if(colJ.joueursList[k].curentScore>=21){
                         for (int p = 0; p< nombreDeJoeur;p++) {
@@ -131,6 +138,7 @@ public class Bunco extends Jeu {
 
 
         }while (nextRound == false);
+
         }
 
 

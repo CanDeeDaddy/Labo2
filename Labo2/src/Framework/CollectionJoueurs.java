@@ -58,6 +58,18 @@ public class CollectionJoueurs implements Collection {
         return false;
     }
 
+    public void afficherScoreJoueurs(){
+        String leftAlignFormat = "| %-15s | %-4d |%n";
+
+        System.out.format("+-----------------+------+%n");
+        System.out.format("| Nom des joueurs | score |%n");
+        System.out.format("+-----------------+------+%n");
+        for (int i = 0; i < capacite; i++) {
+            System.out.format(leftAlignFormat, joueursList[i].getNom(), joueursList[i].getScore());
+        }
+        System.out.format("+-----------------+------+%n");
+    }
+
     /**
      * Cette methode retourne la liste de joueur en ordre decroissant
      * @return une liste de joueur

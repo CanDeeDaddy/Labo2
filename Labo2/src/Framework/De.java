@@ -12,7 +12,7 @@ public class De implements Comparable <De>{
     De(){
 
     }
-    public static int lancerDe(){
+    public  int lancerDe(){
         Random rn = new Random();
         return rn.nextInt(MAX - MIN  + 1) + MIN ;
     }
@@ -25,4 +25,6 @@ public class De implements Comparable <De>{
         }else {return 0;}
 
     }
+
+
 }

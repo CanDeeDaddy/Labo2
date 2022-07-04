@@ -38,7 +38,7 @@ public class BuncoPlus extends Jeu {
             System.out.println("Tour " + tour);
             String next = reader.readLine();
             for(int k=0; k < nombreDeJoeur; k++ ) {
-                System.out.println("Joeur : " + colJ.joueursList[k].getNom());
+                System.out.println("Joueur : " + colJ.joueursList[k].getNom());
                 boolean keepRolling = true;
                 do {
                     int curentPoints = 0;
@@ -47,9 +47,10 @@ public class BuncoPlus extends Jeu {
                     for (int j = 0; j < 3; j++) {
 
                         colJ.joueursList[k].getCollectionDes().desList[j].value = colJ.joueursList[k].getCollectionDes().desList[j].lancerDe();
-                        System.out.print(colJ.joueursList[k].getCollectionDes().desList[j].value + " ");
-
+                             System.out.print(colJ.joueursList[k].getCollectionDes().desList[j].value + " ");
                     }
+                    colJ.afficherScoreJoueurs();
+                    colJ.joueursList[k].getCollectionDes().afficherDes();
 
                     compare+= colJ.joueursList[k].getCollectionDes().desList[0].compareTo(colJ.joueursList[k].getCollectionDes().desList[1]);
                     compare+= colJ.joueursList[k].getCollectionDes().desList[0].compareTo(colJ.joueursList[k].getCollectionDes().desList[2]);
