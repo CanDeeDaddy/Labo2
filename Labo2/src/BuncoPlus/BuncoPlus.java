@@ -47,9 +47,9 @@ public class BuncoPlus extends Jeu {
                     for (int j = 0; j < 3; j++) {
 
                         colJ.joueursList[k].getCollectionDes().desList[j].value = colJ.joueursList[k].getCollectionDes().desList[j].lancerDe();
-                             System.out.print(colJ.joueursList[k].getCollectionDes().desList[j].value + " ");
+                             //System.out.print(colJ.joueursList[k].getCollectionDes().desList[j].value + " ");
                     }
-                    colJ.afficherScoreJoueurs();
+                    //colJ.afficherScoreJoueurs();
                     colJ.joueursList[k].getCollectionDes().afficherDes();
 
                     compare+= colJ.joueursList[k].getCollectionDes().desList[0].compareTo(colJ.joueursList[k].getCollectionDes().desList[1]);
@@ -110,7 +110,8 @@ public class BuncoPlus extends Jeu {
                 System.out.println();
             }
         }
-
+        System.out.println("Final score");
+        colJ.afficherScoreJoueurs();
 
     }
 

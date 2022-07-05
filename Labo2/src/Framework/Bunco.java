@@ -29,7 +29,7 @@ public class Bunco extends Jeu {
         for(int i=0; i < 6; i++ ) {
             int tour = i + 1;
             System.out.println("Tour " + tour);
-            colJ.afficherScoreJoueurs();
+            //colJ.afficherScoreJoueurs();
             System.out.println("Appuyer sur la touche entree pour lancer les dees");
             String next = reader.readLine();
             boolean nextRound = false;
@@ -114,7 +114,7 @@ public class Bunco extends Jeu {
                         }
 
                         System.out.println();
-                        System.out.println("Appuyer sur la touche entree pour lancer les dees");
+                        //System.out.println("Appuyer sur la touche entree pour lancer les dees");
                         next = reader.readLine();
 
 
@@ -122,7 +122,7 @@ public class Bunco extends Jeu {
 
                     System.out.println("point : " + colJ.joueursList[k].getScore());
                     System.out.println();
-                    colJ.afficherScoreJoueurs();
+                    //colJ.afficherScoreJoueurs();
 
 
                     if(colJ.joueursList[k].curentScore>=21){
@@ -141,6 +141,7 @@ public class Bunco extends Jeu {
 
         }
 
-
+        System.out.println("Final score");
+        colJ.afficherScoreJoueurs();
     }
 }
