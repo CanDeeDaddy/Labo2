@@ -1,5 +1,11 @@
 package Framework;
 
+/**
+ *
+ *  Classe qui permet des operation sur les  collection de Des ainsi que leur creation
+ *  Implemente la l'interface collection
+ *
+ */
 public class CollectionDes implements Collection
 {
     private int size;
@@ -8,12 +14,24 @@ public class CollectionDes implements Collection
     public De[] desList;
 
 
+    /**
+     *
+     * Le contructeur cree une instance de la classe CollectionDes
+     *
+     */
     public CollectionDes()
     {
         desList = new De[MAX_ITEMS];
 
     }
 
+    /**
+     *
+     * La methode ajoute un De a la collection
+     *
+     * @param de le De a ajouter
+     *
+     */
     public boolean ajouterDe(De de)
     {
         boolean booAjouterDe = false;
@@ -29,6 +47,12 @@ public class CollectionDes implements Collection
         }
         return booAjouterDe;
     }
+
+    /**
+     *
+     *  La methode affiche le resultat des
+     *
+     */
     public  void afficherDes(){
 
         /*
@@ -49,7 +73,11 @@ public class CollectionDes implements Collection
     }
 
 
-
+    /**
+     *
+     *  La methode affiche la premiere ligne d'un De
+     *
+     */
     public  void afficherPremiereLigne(){
 
         System.out.printf(" _____  _____  _____ ");
@@ -57,7 +85,11 @@ public class CollectionDes implements Collection
     }
 
 
-
+    /**
+     *
+     *  La methode affiche la deuxieme ligne d'un De
+     *
+     */
     public  void afficherDeuxiemeLigne(){
 
         for(int i = 0; i < 3; i ++) {
@@ -75,6 +107,11 @@ public class CollectionDes implements Collection
         }
     }
 
+    /**
+     *
+     *  La methode affiche la troisieme ligne d'un De
+     *
+     */
     public  void afficherTroisiemeLigne(){
 
         for(int i = 0; i < 3; i ++){
@@ -91,6 +128,11 @@ public class CollectionDes implements Collection
         }
     }
 
+    /**
+     *
+     *  La methode affiche la quatrieme ligne d'un De
+     *
+     */
     public  void afficherQuatriemeLigne(){
 
         for(int i = 0; i < 3; i ++){
@@ -108,6 +150,13 @@ public class CollectionDes implements Collection
         }
     }
 
+    /**
+     *
+     * La methode cree un iterateur
+     *
+     * @return retourne un iterateur
+     *
+     */
     @Override
     public Iterator createIterator() {
         return new DeIterator(desList);

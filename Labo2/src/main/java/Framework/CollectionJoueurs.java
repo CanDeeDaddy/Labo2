@@ -5,7 +5,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
+/**
+ *
+ *  Classe qui permet des operation sur les  collection de joueur ainsi que leur creation
+ *  Implemente la l'interface collection
+ *
+ *
+ */
 public class CollectionJoueurs implements Collection {
 
     private int size;
@@ -15,13 +21,26 @@ public class CollectionJoueurs implements Collection {
     public Joueur[] joueursList;
 
 
-
+    /**
+     *
+     * Le contructeur cree une instance de la classe CollectionJoueur
+     *
+     * @param tailleMax le nombre de joueur
+     *
+     */
     public CollectionJoueurs(int tailleMax)
     {
         this.capacite = tailleMax;
         joueursList = new Joueur[tailleMax];
     }
 
+    /**
+     *
+     * La methode ajoute un joueur a la collection
+     *
+     * @param joueur le joueur a ajouter
+     *
+     */
     public boolean ajouterJoueur(Joueur joueur)
     {
         boolean booJoueurAjouter = false;
@@ -42,11 +61,23 @@ public class CollectionJoueurs implements Collection {
         return booJoueurAjouter;
     }
 
+    /**
+     *
+     * La methode verifie que un joueur fait partie de la collection
+     *
+     * @param joueur le nombre de joueur
+     * @return true si le joeur existe et false si non
+     *
+     */
     public boolean contains(Joueur joueur){
         return Arrays.asList(joueursList).contains(joueur);
     }
 
-
+    /**
+     *
+     * Affiche les score des joueurs
+     *
+     */
     public void afficherScoreJoueurs(){
         String leftAlignFormat = "| %-15s | %-4d |%n";
 
@@ -71,7 +102,13 @@ public class CollectionJoueurs implements Collection {
 
 
 
-
+    /**
+     *
+     * La methode cree un iterateur
+     *
+     * @return retourne un iterateur
+     *
+     */
     @Override
     public Iterator createIterator() {
         return new JoueurIterator(joueursList);
