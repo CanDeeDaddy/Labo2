@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+
 public class CollectionJoueurs implements Collection {
 
     private int size;
@@ -14,10 +15,7 @@ public class CollectionJoueurs implements Collection {
     public Joueur[] joueursList;
 
 
-    public CollectionJoueurs()
-    {
-        joueursList = new Joueur[DEFAULT_MAX_ITEMS];
-    }
+
     public CollectionJoueurs(int tailleMax)
     {
         this.capacite = tailleMax;
@@ -26,37 +24,28 @@ public class CollectionJoueurs implements Collection {
 
     public boolean ajouterJoueur(Joueur joueur)
     {
-
-        if ( capacite == 0 &&numberOfItems >= DEFAULT_MAX_ITEMS) {
+        boolean booJoueurAjouter = false;
+        if(joueur != null){
+        if ( numberOfItems >= capacite) {
             System.out.println("Liste de joueurs est rempli");
-            return false;
+            booJoueurAjouter = false;
         }
         else
         {
-            if(numberOfItems >= capacite){
-                System.out.println("Liste de joueurs est rempli");
-
-                return false;
-            }
             joueursList[numberOfItems] = joueur;
             numberOfItems = numberOfItems + 1;
-            return true;
+            booJoueurAjouter = true;
         }
+        }else{
+            booJoueurAjouter = false;
+        }
+        return booJoueurAjouter;
     }
 
-    public boolean isEmpty(){
-        return joueursList.length == 0;
-    }
     public boolean contains(Joueur joueur){
         return Arrays.asList(joueursList).contains(joueur);
     }
-    public boolean remove(Joueur joueur){
-        if (Arrays.asList(joueursList).contains(joueur)){
-            Arrays.asList(joueursList).remove(joueur);
-            return true;
-        }
-        return false;
-    }
+
 
     public void afficherScoreJoueurs(){
         String leftAlignFormat = "| %-15s | %-4d |%n";

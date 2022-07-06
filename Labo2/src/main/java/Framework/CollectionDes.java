@@ -3,7 +3,7 @@ package Framework;
 public class CollectionDes implements Collection
 {
     private int size;
-    static final int MAX_ITEMS = 6;
+    static final int MAX_ITEMS = 3;
     int numberOfItems = 0;
     public De[] desList;
 
@@ -14,15 +14,20 @@ public class CollectionDes implements Collection
 
     }
 
-    public void ajouterDe(De de)
+    public boolean ajouterDe(De de)
     {
-        if (numberOfItems >= MAX_ITEMS)
-            System.err.println("Full");
-        else
-        {
-            desList[numberOfItems] = de;
-            numberOfItems = numberOfItems + 1;
+        boolean booAjouterDe = false;
+        if(de != null){
+            if (numberOfItems >= MAX_ITEMS)
+                System.err.println("Rempli");
+            else
+            {
+                desList[numberOfItems] = de;
+                numberOfItems = numberOfItems + 1;
+                booAjouterDe = true;
+            }
         }
+        return booAjouterDe;
     }
     public  void afficherDes(){
 
