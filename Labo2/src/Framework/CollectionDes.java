@@ -1,5 +1,10 @@
 package Framework;
 
+/**
+ *
+ * Une classe qui permet des manipulations sur une collection de De
+ *
+ */
 public class CollectionDes implements Collection
 {
     private int size;
@@ -7,13 +12,24 @@ public class CollectionDes implements Collection
     int numberOfItems = 0;
     public De[] desList;
 
-
+    /**
+     *
+     * Cree une collection de six De
+     *
+     */
     public CollectionDes()
     {
         desList = new De[MAX_ITEMS];
 
     }
 
+    /**
+     *
+     * Cree ajoute un De a la collection
+     *
+     * @param  de le joueur a ajouter
+     *
+     */
     public void ajouterDe(De de)
     {
         if (numberOfItems >= MAX_ITEMS)
@@ -24,6 +40,12 @@ public class CollectionDes implements Collection
             numberOfItems = numberOfItems + 1;
         }
     }
+
+    /**
+     *
+     * Affiche les des
+     *
+     */
     public  void afficherDes(){
 
         /*
@@ -44,7 +66,11 @@ public class CollectionDes implements Collection
     }
 
 
-
+    /**
+     *
+     * Affiche la premieres lignes des des
+     *
+     */
     public  void afficherPremiereLigne(){
 
         System.out.printf(" _____  _____  _____ ");
@@ -52,7 +78,11 @@ public class CollectionDes implements Collection
     }
 
 
-
+    /**
+     *
+     * Affiche la deuxieme lignes des des
+     *
+     */
     public  void afficherDeuxiemeLigne(){
 
         for(int i = 0; i < 3; i ++) {
@@ -70,6 +100,11 @@ public class CollectionDes implements Collection
         }
     }
 
+    /**
+     *
+     * Affiche la troisieme lignes des des
+     *
+     */
     public  void afficherTroisiemeLigne(){
 
         for(int i = 0; i < 3; i ++){
@@ -86,6 +121,11 @@ public class CollectionDes implements Collection
         }
     }
 
+    /**
+     *
+     * Affiche la quatrieme lignes des des
+     *
+     */
     public  void afficherQuatriemeLigne(){
 
         for(int i = 0; i < 3; i ++){
@@ -103,6 +143,11 @@ public class CollectionDes implements Collection
         }
     }
 
+
+    /**
+     * cree un iterateur
+     * @return un iterateur
+     */
     @Override
     public Iterator createIterator() {
         return new DeIterator(desList);

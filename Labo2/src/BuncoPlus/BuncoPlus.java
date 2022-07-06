@@ -6,10 +6,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ *
+ * Une classe qui permet le demarrage d'une partie de BuncoPlus et qui extend la classe jeu
+ *
+ */
 public class BuncoPlus extends Jeu {
 
     int nombreDeJoeur = 0;
     CollectionJoueurs colJ;
+
+    /**
+     *
+     * Methode qui cree une instance de BuncoPlus
+     *
+     * @param  nbJ le nombre de joeur participant a la partie
+     *
+     */
     public BuncoPlus(int nbJ) {
         super(nbJ);
         this.nombreDeJoeur = nbJ;
@@ -17,7 +30,11 @@ public class BuncoPlus extends Jeu {
 
     }
 
-
+    /**
+     *
+     * Demare une partie de BuncoPlus
+     *
+     */
     public void startGame() throws IOException {
 
         Context context = new Context();

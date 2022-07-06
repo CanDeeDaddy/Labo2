@@ -4,13 +4,30 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ *
+ * Une classe qui permet le demarrage d'une partie de Bunco et qui extend la classe jeu
+ *
+ */
 public class Bunco extends Jeu {
 
+    /**
+     *
+     * Methode qui cree une instance de Bunco
+     *
+     *@param  nbJoueur le nombre de joeur participant a la partie
+     *
+     */
     public Bunco(int nbJoueur)
     {
         super(nbJoueur);
     }
 
+    /**
+     *
+     * Demare une partie de Bunco
+     *
+     */
     public void startGame() throws IOException {
 
         Context context = new Context();
